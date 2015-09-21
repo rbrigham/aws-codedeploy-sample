@@ -5,14 +5,10 @@ files:
     destination: /var/www/html/
 hooks:
   ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root
+    - location: scripts/deregister_from_elb.sh
+    - location: scripts/stop_server.sh
   BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
+    - location: scripts/install_dependencies.sh
   ApplicationStart:
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
+    - location: scripts/start_server.sh
+    - location: scripts/register_with_elb.sh
