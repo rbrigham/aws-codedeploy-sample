@@ -11,8 +11,8 @@ hooks:
     - location: scripts/stop_server.sh
   BeforeInstall:
     - location: scripts/install_puppet.sh
-    - location: scripts/puppet_apply.sh
   ApplicationStart:
+    - location: scripts/puppet_apply.sh
     - location: scripts/start_server.sh
     - location: scripts/register_with_elb.sh
   ValidateService:
