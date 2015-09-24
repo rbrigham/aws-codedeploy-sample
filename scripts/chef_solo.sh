@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# First, make sure the tomcat cookbook is installed
+# First, make sure the httpd cookbook is installed
 cd /etc/chef/codedeploy/
 /usr/local/bin/librarian-chef install
 
