@@ -1,6 +1,6 @@
 #!/bin/bash
 
-result=$(curl -s -I http://localhost/test)
+result=$(curl -s -I http://localhost/)
 
 if [[ "$result" == *"200 OK"* ]]; then
     exit 0
