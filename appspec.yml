@@ -1,8 +1,6 @@
 version: 0.0
 os: linux
 files:
-  - source: chef/
-    destination: /etc/chef/codedeploy
   - source: index.html
     destination: /var/www/html/
 hooks:
@@ -10,9 +8,8 @@ hooks:
     - location: scripts/deregister_from_elb.sh
     - location: scripts/stop_server.sh
   BeforeInstall:
-    - location: scripts/install_chef.sh
+    - location: scripts/install_dependencies.sh
   ApplicationStart:
-    - location: scripts/chef_solo.sh
     - location: scripts/start_server.sh
     - location: scripts/register_with_elb.sh
   ValidateService:
